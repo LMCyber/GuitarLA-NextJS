@@ -1,4 +1,5 @@
 import Head from 'next/head'
+import { Footer } from './Footer'
 import { Header } from './Header'
 
 export const Layout = ({ children, pagina }) => {
@@ -9,8 +10,11 @@ export const Layout = ({ children, pagina }) => {
         <meta name='description' content='Sitio web de venta de guitarras' />
       </Head>
 
-<Header/>
+      <Header />
+
       {children}
+
+      <Footer />
     </div>
   )
 }
