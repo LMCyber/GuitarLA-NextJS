@@ -2,15 +2,21 @@ import Head from 'next/head'
 import { Footer } from './Footer'
 import { Header } from './Header'
 
-export const Layout = ({ children, pagina }) => {
+const Layout = ({ children, pagina, guitarra }) => {
   return (
     <div>
       <Head>
         <title>Guitar LA - {pagina}</title>
         <meta name='description' content='Sitio web de venta de guitarras' />
+        <link rel='preconnect' href='https://fonts.googleapis.com' />
+        <link rel='preconnect' href='https://fonts.gstatic.com' crossOrigin />
+        <link
+          href='https://fonts.googleapis.com/css2?family=Outfit:wght@400;700;900&display=swap'
+          rel='stylesheet'
+        />
       </Head>
 
-      <Header />
+      <Header guitarra={guitarra} />
 
       {children}
 
@@ -18,3 +24,9 @@ export const Layout = ({ children, pagina }) => {
     </div>
   )
 }
+
+Layout.defaultProps = {
+  guitarra: null,
+}
+
+export default Layout
